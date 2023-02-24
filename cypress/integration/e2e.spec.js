@@ -18,14 +18,11 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
         cy.addProdutos('Abominable Hoodie', 'M', 'Green', 1)
         cy.get('#primary-menu > .menu-item-629 > a').click()
-        cy.get('[class="product-block grid"]').contains('Agasalho gyn').click()
-        cy.get('.single_add_to_cart_button').click()
+        cy.addProdutosSingle('Agasalho gyn')
         cy.get('#primary-menu > .menu-item-629 > a').click()
-        cy.get('[class="product-block grid"]').contains('[61171721] Produto Lgc2').click()
-        cy.get('.single_add_to_cart_button').click()
+        cy.addProdutosSingle('[61171721] Produto Lgc2')
         cy.get('#primary-menu > .menu-item-629 > a').click()
-        cy.get('[class="product-block grid"]').contains('[14731667] Produto Lgc2').click()
-        cy.get('.single_add_to_cart_button').click()
+        cy.addProdutosSingle('[14731667] Produto Lgc2')
         cy.get('.woocommerce-message > .button').click()
         cy.get('.checkout-button').click()
 

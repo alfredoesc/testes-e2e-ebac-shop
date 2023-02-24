@@ -38,3 +38,8 @@ Cypress.Commands.add('addProdutos', (produto, tamanho, cor, quantidade) => {
     cy.get('.input-text').clear().type(quantidade)
     cy.get('.single_add_to_cart_button').click()
 })
+
+Cypress.Commands.add('addProdutosSingle', (produto) => {
+    cy.get('[class="product-block grid"]').contains(produto).click()
+    cy.get('.single_add_to_cart_button').click()
+})
